@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Nav,NavItem,NavbarBrand,NavLink,Navbar} from 'reactstrap';
+import {Nav,Navbar,NavItem,NavbarBrand,NavLink} from 'reactstrap';
 
 class AppNav extends Component {
     state = {  }
@@ -16,16 +16,18 @@ class AppNav extends Component {
                       <NavLink href="/categories">Categories</NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink href="/expenses">Expeneses</NavLink>
+                      <NavLink href="/expenses">Expenses</NavLink>
                     </NavItem>
+                   
                   </Nav>
+                 
               </Navbar>
             </div>
           );
         }
-        
-     
-    }
 
+
+    }
  
+    
 export default AppNav;

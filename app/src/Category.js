@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import AppNav from './AppNav';
 
 class Category extends Component {
+  
     state = { 
         isLoading : true,
         Categories : []
      }
 
      async componentDidMount(){
-         const response =await fetch('/api/categories')
+         const response = await fetch('/api/categories')
          const body = await response.json();
-         this.setState({Categories :body, isLoading: false});
+         this.setState({Categories: body, isLoading: false});
      }
+
     render() { 
         const {Categories, isLoading} = this.state;
         if(isLoading)
@@ -22,12 +24,15 @@ class Category extends Component {
                 <AppNav/>
                 <h2>Categories</h2>
                 {
-                    Categories.map( category => 
+                    Categories.map( category =>
                         <div id={category.id}>
                             {category.name}
-                            </div>
-                        )
+                        </div>
+
+                    )
+
                 }
+
             </div>
          );
     }

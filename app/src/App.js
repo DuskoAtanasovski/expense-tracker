@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import {Route,BrowserRouter as Router, Switch} from 'react-router-dom';
 import Category from './Category';
 import Home from './Home';
 import Expenses from './Expenses';
@@ -10,9 +10,9 @@ class App extends Component {
         return ( 
             <Router>
                 <Switch>
-                    <Route path='/' exact={true} component={Home}/>
-                    <Route path='/categories' exact={true} component={Category}/>
-                    <Route path='/expenses' exact={true} component={Expenses}/>
+                    <Route path='/' exact={true} component={Home} />
+                    <Route path='/categories' exact={true} component={Category} />
+                    <Route path='/expenses' exact={true} component={Expenses} />
                 </Switch>
             </Router>
          );
