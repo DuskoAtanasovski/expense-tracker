@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +36,12 @@ public class ExpenseController {
 	ResponseEntity<Expense> createExpense(@Valid @RequestBody Expense expense) throws URISyntaxException {
 		Expense result = expenseRepository.save(expense);
 		return ResponseEntity.created(new URI("/api/expenses" + result.getId())).body(result);
+	}
+	
+	@PutMapping("/expenses/{id}")
+	ResponseEntity<Expense> updateExpense(@Valid @RequestBody Expense expense) {
+		Expense result = expenseRepository.save(expense);
+		return ResponseEntity.ok().body(result);
 	}
 
 	@DeleteMapping("/expenses/{id}")
