@@ -25,6 +25,8 @@ public class Expense {
 	
 	private String description;
 	
+	private String location;
+	
 	@ManyToOne
 	private Category category;
 	
